@@ -3,8 +3,10 @@ package com.driver;
 public class F1 extends Car {
 
     public F1(String name, boolean isManual) {
-        //Use arbitrary values for parameters which are not mentioned
-    }
+        super("mercedes",4,2,5,false,"petrol",4);
+
+        //Use arbitrary values for parameters which are not mentione
+        }
 
     public void accelerate(int rate){
         int newSpeed = 0; //set the value of new speed by using currentSpeed and rate
@@ -19,12 +21,41 @@ public class F1 extends Car {
          */
 
         if(newSpeed == 0) {
+            stop();
+            setCurrentGear(1);
+
             //Stop the car, set gear as 1
         }
-        //for all other cases, change the gear accordingly
+        else if(newSpeed>=1 && newSpeed <=50) {
+            setCurrentSpeed(newSpeed);
+            setCurrentGear(1);
 
-        if(newSpeed > 0) {
-            changeSpeed(newSpeed, getCurrentDirection());
+            //Stop the car, set gear as 1
+        }else if(newSpeed>=51 && newSpeed<=100) {
+            setCurrentSpeed(newSpeed);
+            setCurrentGear(2);
+
+
+            //Stop the car, set gear as 1
+        }else if(newSpeed>=101 && newSpeed<=150) {
+            setCurrentSpeed(newSpeed);
+            setCurrentGear(3);
+
+            //Stop the car, set gear as 1
+        }else if(newSpeed>=151 && newSpeed<=200) {
+            setCurrentSpeed(newSpeed);
+            setCurrentGear(4);
+
+
+            //Stop the car, set gear as 1
+        }else if(newSpeed>=201 && newSpeed<=250) {
+            setCurrentSpeed(newSpeed);
+            setCurrentGear(5);
+        }else{
+            setCurrentSpeed(newSpeed);
+            setCurrentGear(6);
         }
+            //Stop the car, set gear as 1
+              //for all other cases, change the gear accordingl
     }
 }
